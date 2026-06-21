@@ -1,0 +1,16 @@
+.about-section {
+  background-color: #f8f9fa;
+}
+
+.about-section p {
+  line-height: 1.8;
+  color: #6c757d;
+}
+
+.about-card {
+  border-radius: 20px;
+}
+
+.about-card strong {
+  color: #212529;
+}

@@ -1,0 +1,22 @@
+.achievement-section {
+  background-color: #ffffff;
+}
+
+.achievement-card {
+  transition: all 0.3s ease;
+  border-radius: 20px;
+}
+
+.achievement-card:hover {
+  transform: translateY(-8px);
+}
+
+.achievement-icon {
+  font-size: 3rem;
+  color: #0d6efd;
+  margin-bottom: 15px;
+}
+
+.achievement-card h2 {
+  margin-bottom: 10px;
+}

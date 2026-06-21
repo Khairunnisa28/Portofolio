@@ -1,0 +1,52 @@
+.hero-section {
+  background: linear-gradient(
+    135deg,
+    #f8f9fa 0%,
+    #ffffff 100%
+  );
+}
+
+.hero-title {
+  color: #212529;
+  font-weight: 600;
+}
+
+.hero-description {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #6c757d;
+  max-width: 650px;
+}
+
+/* Foto */
+
+.profile-wrapper {
+  position: relative;
+}
+
+.profile-image {
+  width: 380px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+
+  border-radius: 50%;
+  border: 8px solid white;
+
+  box-shadow: 0 10px 30px rgba(0,0,0,.15);
+}
+
+/* Responsive */
+
+@media (max-width: 992px) {
+
+  .hero-section {
+    text-align: center;
+    padding-top: 100px;
+  }
+
+  .profile-image {
+    width: 280px;
+    height: 280px;
+  }
+
+}
