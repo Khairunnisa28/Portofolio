@@ -1,57 +1,60 @@
+import { useState } from "react";
 import "./Projects.css";
 
-import curriculumImg from "../assets/ai-curriculum.jpg";
-import dashboardImg from "../assets/dashboard.jpg";
-import cnnImg from "../assets/cnn-project.jpg";
-import hockeyImg from "../assets/air-hockey.jpg";
-import narutoImg from "../assets/naruto-clone.jpg";
-import iotImg from "../assets/iot-monitoring.jpg";
-
 function Projects() {
+
+  const categories = [
+    "All",
+    "Curriculum Innovation",
+    "Data Science & Analytics",
+    "AI Engineer",
+    "IoT & Robotics"
+  ];
+
   const projects = [
     {
-      image: curriculumImg,
       category: "Curriculum Innovation",
+      icon: "bi-journal-bookmark-fill",
       title: "AI Curriculum Framework",
       description:
         "Designed AI learning pathways, lesson plans, assessments, and project-based learning activities.",
       tech: ["AI", "STEM", "Curriculum Design"],
     },
     {
-      image: dashboardImg,
       category: "Data Science & Analytics",
+      icon: "bi-bar-chart-fill",
       title: "Educational Analytics Dashboard",
       description:
         "Interactive dashboard for monitoring learner performance and curriculum effectiveness.",
       tech: ["Python", "Tableau", "Analytics"],
     },
     {
-      image: cnnImg,
       category: "AI Engineer",
+      icon: "bi-cpu-fill",
       title: "Smoker Identification using CNN",
       description:
         "Computer vision project for smoker identification using deep learning models.",
       tech: ["Python", "TensorFlow", "CNN"],
     },
     {
-      image: hockeyImg,
       category: "AI Engineer",
+      icon: "bi-controller",
       title: "Hand Air Hockey",
       description:
         "Real-time hand tracking game powered by MediaPipe and OpenCV.",
       tech: ["OpenCV", "MediaPipe", "Computer Vision"],
     },
     {
-      image: narutoImg,
       category: "AI Engineer",
+      icon: "bi-magic",
       title: "Naruto Shadow Clone Effect",
       description:
         "Gesture recognition and segmentation effect inspired by Naruto's Kage Bunshin.",
       tech: ["OpenCV", "MediaPipe", "Segmentation"],
     },
     {
-      image: iotImg,
       category: "IoT & Robotics",
+      icon: "bi-router-fill",
       title: "Smart IoT Monitoring System",
       description:
         "Real-time environmental monitoring using sensors and cloud platforms.",
@@ -59,34 +62,76 @@ function Projects() {
     },
   ];
 
+  const [selectedCategory, setSelectedCategory] = useState("All");
+
+  const filteredProjects =
+    selectedCategory === "All"
+      ? projects
+      : projects.filter(
+          (project) => project.category === selectedCategory
+        );
+
   return (
     <section id="projects" className="projects-section py-5">
 
       <div className="container">
 
+        {/* Heading */}
+
         <div className="text-center mb-5">
           <h2 className="fw-bold">
-            Selected Projects & Research
+            Selected Projects
           </h2>
 
           <p className="text-muted">
-            Highlighting projects across curriculum innovation,
-            artificial intelligence, data science, and IoT.
+            Projects across curriculum innovation,
+            data science, artificial intelligence,
+            and IoT systems.
           </p>
         </div>
 
+        {/* Filter */}
+
+        <div className="project-filter mb-5">
+
+          {categories.map((category) => (
+            <button
+              key={category}
+              className={`btn ${
+                selectedCategory === category
+                  ? "btn-primary"
+                  : "btn-outline-primary"
+              }`}
+              onClick={() =>
+                setSelectedCategory(category)
+              }
+            >
+              {category}
+            </button>
+          ))}
+
+        </div>
+
+        {/* Cards */}
+
         <div className="row g-4">
 
-          {projects.map((project, index) => (
-            <div className="col-lg-4 col-md-6" key={index}>
+          {filteredProjects.map((project, index) => (
+
+            <div
+              className="col-lg-4 col-md-6"
+              key={index}
+            >
 
               <div className="card project-card h-100">
 
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="project-image"
-                />
+                {/* Placeholder */}
+
+                <div className="project-placeholder">
+                  <i className={`bi ${project.icon}`}></i>
+                </div>
+
+                {/* Content */}
 
                 <div className="card-body">
 
@@ -115,7 +160,7 @@ function Projects() {
 
                   </div>
 
-                  <button className="btn btn-outline-primary btn-sm">
+                  <button className="btn btn-outline-primary btn-sm project-btn">
                     View Details
                   </button>
 
@@ -124,6 +169,7 @@ function Projects() {
               </div>
 
             </div>
+
           ))}
 
         </div>

@@ -3,6 +3,7 @@ import "./Navbar.css";
 function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+
       <div className="container">
 
         {/* Logo */}
@@ -16,6 +17,9 @@ function Navbar() {
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
         >
           <span className="navbar-toggler-icon"></span>
         </button>
@@ -28,12 +32,6 @@ function Navbar() {
             <li className="nav-item">
               <a className="nav-link" href="#hero">
                 Home
-              </a>
-            </li>
-
-            <li className="nav-item">
-              <a className="nav-link" href="#about">
-                About
               </a>
             </li>
 
@@ -56,18 +54,32 @@ function Navbar() {
             </li>
 
             <li className="nav-item">
-              <a className="nav-link" href="#contact">
+              <a className="nav-link" href="#publication">
+                Publications
+              </a>
+            </li>
+
+            <li className="nav-item">
+              <a className="nav-link" href="#certificates">
+                Certificates
+              </a>
+            </li>
+
+            <li className="nav-item">
+              <a className="nav-link" href="#footer">
                 Contact
               </a>
             </li>
 
             <li className="nav-item ms-lg-3">
               <a
-                href="/CV_Nida_Khairunnisa.pdf"
+                href="https://drive.google.com/file/d/1kPBzPeOfRB1VFSUz_jYOVjBirvo2WU7f/view?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="btn btn-primary rounded-pill px-4"
               >
                 <i className="bi bi-download me-2"></i>
-                CV
+                Download CV
               </a>
             </li>
 
@@ -76,6 +88,7 @@ function Navbar() {
         </div>
 
       </div>
+
     </nav>
   );
 }

@@ -138,6 +138,38 @@
   color: #6c757d;
 }
 
+.project-filter {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.project-filter .btn {
+  border-radius: 30px;
+  font-weight: 600;
+}
+
+.project-placeholder {
+  height: 220px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: linear-gradient(
+    135deg,
+    #0d6efd,
+    #6ea8fe
+  );
+
+  color: white;
+}
+
+.project-placeholder i {
+  font-size: 4rem;
+}
+
 /* =========================
    Responsive
 ========================= */
