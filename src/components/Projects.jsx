@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import "./Projects.css";
 
 function Projects() {
@@ -11,56 +12,73 @@ function Projects() {
     "IoT & Robotics"
   ];
 
-  const projects = [
-    {
-      category: "Curriculum Innovation",
-      icon: "bi-journal-bookmark-fill",
-      title: "AI Curriculum Framework",
-      description:
-        "Designed AI learning pathways, lesson plans, assessments, and project-based learning activities.",
-      tech: ["AI", "STEM", "Curriculum Design"],
-    },
-    {
-      category: "Data Science & Analytics",
-      icon: "bi-bar-chart-fill",
-      title: "Educational Analytics Dashboard",
-      description:
-        "Interactive dashboard for monitoring learner performance and curriculum effectiveness.",
-      tech: ["Python", "Tableau", "Analytics"],
-    },
-    {
-      category: "AI Engineer",
-      icon: "bi-cpu-fill",
-      title: "Smoker Identification using CNN",
-      description:
-        "Computer vision project for smoker identification using deep learning models.",
-      tech: ["Python", "TensorFlow", "CNN"],
-    },
-    {
-      category: "AI Engineer",
-      icon: "bi-controller",
-      title: "Hand Air Hockey",
-      description:
-        "Real-time hand tracking game powered by MediaPipe and OpenCV.",
-      tech: ["OpenCV", "MediaPipe", "Computer Vision"],
-    },
-    {
-      category: "AI Engineer",
-      icon: "bi-magic",
-      title: "Naruto Shadow Clone Effect",
-      description:
-        "Gesture recognition and segmentation effect inspired by Naruto's Kage Bunshin.",
-      tech: ["OpenCV", "MediaPipe", "Segmentation"],
-    },
-    {
-      category: "IoT & Robotics",
-      icon: "bi-router-fill",
-      title: "Smart IoT Monitoring System",
-      description:
-        "Real-time environmental monitoring using sensors and cloud platforms.",
-      tech: ["Micro:bit", "IoT", "ThingSpeak"],
-    },
-  ];
+ const projects = [
+  {
+    category: "Curriculum Innovation",
+    icon: "bi-journal-bookmark-fill",
+    title: "AI Curriculum Framework",
+    description:
+      "Designed AI learning pathways, lesson plans, assessments, and project-based learning activities.",
+    tech: ["AI", "STEM", "Curriculum Design"],
+    link: "/projects/ai-curriculum-framework",
+  },
+  {
+    category: "Data Science & Analytics",
+    icon: "bi-bar-chart-fill",
+    title: "Superstore Dashboard",
+    description:
+      "Interactive business intelligence dashboard featuring sales analytics, profit insights, and demand forecasting. Built with Streamlit using Prophet for time series forecasting, Moving Average as a baseline model, and rolling validation to evaluate forecasting performance.",
+    tech: [
+      "Python",
+      "Streamlit",
+      "Pandas",
+      "Plotly",
+      "Prophet",
+      "Time Series Forecasting"
+    ],
+    link: "https://superstoredashboards.streamlit.app/",
+  },
+  {
+    category: "AI Engineer",
+    icon: "bi-cpu-fill",
+    title: "Kage Bunshin Effect",
+    description:
+      "AI-powered computer vision project that generates a real-time Kage Bunshin visual effect using human segmentation, background subtraction, and image compositing techniques.",
+
+    tech: [
+      "Python",
+      "OpenCV",
+      "MediaPipe",
+      "NumPy",
+      "Computer Vision"
+    ],
+    link: "https://github.com/Khairunnisa28/Kage-bunshin/blob/main/kage_bunshin.py",
+  },
+  {
+    category: "AI Engineer",
+    icon: "bi-controller",
+    title: "Hand Air Hockey",
+    description:
+      "Interactive air hockey game controlled by real-time hand tracking using computer vision. The system detects hand movements with MediaPipe and OpenCV, enabling touchless gameplay with smooth paddle interaction.",
+    tech: [
+      "Python",
+      "OpenCV",
+      "MediaPipe",
+      "Computer Vision",
+      "Hand Tracking"
+    ],
+    link: "https://github.com/Khairunnisa28/hand-hockey",
+  },
+  {
+    category: "IoT & Robotics",
+    icon: "bi-router-fill",
+    title: "Smart IoT Monitoring System",
+    description:
+      "Real-time environmental monitoring using sensors and cloud platforms.",
+    tech: ["Micro:bit", "IoT", "ThingSpeak"],
+    link: "/projects/smart-iot-monitoring-system",
+  },
+];
 
   const [selectedCategory, setSelectedCategory] = useState("All");
 
@@ -160,9 +178,14 @@ function Projects() {
 
                   </div>
 
-                  <button className="btn btn-outline-primary btn-sm project-btn">
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn btn-outline-primary btn-sm project-btn"
+                  >
                     View Details
-                  </button>
+                  </a>
 
                 </div>
 
